@@ -1,0 +1,711 @@
+
+/*-------------------------------------------------- GENERAL CSS ----------------------------------------------------*/
+
+:root{
+    --primary : white;
+    /* --secondary : rgb(0,124,247) ; */
+    --secondary: #884A39;
+    --tertiary : #f0f2f5 ;
+    --fourth : rgb(228,227,227);
+    --background-color : #efeae2;
+    --color: black ;
+    --message : white; 
+
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.router-link{
+    text-decoration: none;
+    color: var(--color);
+}
+
+/*--------------------------------------------- REGISTER AND LOGIN --------------------------------------------------*/
+
+.register{
+    background-color: #a7bcff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register .register-loading{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.register .register-loading h1{
+    font-size: 4rem;
+}
+.register .register-loading p{
+    font-size: 1.5rem;
+    font-weight: 400;    
+}
+.register .wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    padding: 20px 60px;
+    border-radius: 10px;
+    align-items: center;
+}
+.register .wrapper h1{
+    color: rgb(120, 75, 162);
+}
+.register form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+    width: 260px;
+}
+.register form input{
+    padding: 15px;
+    border: none;
+    border-bottom: 2px solid lightgray;
+    outline: none;
+}
+.register form input ::placeholder{
+    color: lightgray;
+}
+.register label {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.register label img{
+    width: 15%;
+    margin-right: 10px;
+}
+.register label span{
+    color: rgb(168,189,255);
+    font-size: 14px;
+    font-weight: 600;
+}
+.register .register-show-name{
+    color: rgb(54, 201, 154);
+}
+.register form button{
+    margin-top: 10px;
+    padding: 10px;
+    color: white;
+    background-color: #7b96ec;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+}
+.register p{
+    font-size: 13px;
+}
+
+/*--------------------------------------------------- HOME --------------------------------------------------------- */
+
+.home{
+    height: 100vh;
+    display: flex;
+    background-color: var(--primary);
+}
+
+/*-------------------------------------------------- SIDE BAR -------------------------------------------------------*/
+.sidebar{
+    flex: 0.8;
+    background-color: var(--primary);
+    height: 100vh;
+    color: black;
+    
+}
+
+/*--------------------------------------------------- NAVBAR --------------------------------------------------------*/
+
+.navbar{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--tertiary) ;
+    color: black;
+    border-bottom: 0.5px solid var(--fourth);
+}
+
+.navbar-profile{
+    display: flex;
+    align-items: center;
+
+}
+
+.navbar-profile-img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.navbar-icon-container{
+    display: flex;
+    align-items: center;
+}
+
+.navbar-icon{
+    border: none;
+    background-color: var(--tertiary);
+    color: gray;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.navbar-icon:hover{
+    background-color: rgb(220,220,220);
+}
+
+.navbar-dropdown{
+    position: relative;
+}
+.navbar-dropdown-content{
+    position: absolute; 
+    background-color: var(--primary);
+    color: var(--color);
+    width: max-content;
+    text-align: left;
+    padding: 10px 0px;
+    top: 32px;
+    right: 3px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-child{
+    padding: 10px 15px;
+}
+
+.dropdown-child:hover{
+    background-color: var(--tertiary);
+}
+
+.message-color-container{
+    padding: 10px;
+    background-color: var(--primary);
+    color: var(--color);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    position: absolute;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    left: 118px;
+    top: 0px;
+    z-index: 2;
+    /* bottom: 10px; */
+}
+.message-color-box{
+    height: 30px;
+    width: 30px;
+    /* background-color: red; */
+    border-radius: 50%;
+}
+
+
+/*-------------------------------------------------- SEARCH BAR----------------------------------------------------- */
+
+.status{
+    background-color: var(--primary);
+    padding: 20px 10px;
+    width: 414px;
+    display: grid;
+    grid-auto-flow: column;
+    overflow: scroll;
+    gap: 10px;
+    /* border-bottom: 0.5px solid var(--fourth); */
+    /* border-right: 0.5px solid var(--primary); */
+}
+.status-content{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.status div{
+    border: 3px solid var(--secondary);
+    border-radius: 50%;
+    padding: 2px;
+    cursor: pointer;
+}
+.search-bar{
+    display: flex;
+    align-items: center;
+    color: gray;
+    cursor: pointer;
+    border-bottom: 0.5px solid var(--tertiary);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.search-bar input{
+    width: 95%;
+    height: 53px;
+    padding: 7px 13px;
+    background-color: var(--primary);
+    outline: none;
+    border: none;
+    color: var(--color);
+    font-size: 15px;
+}
+.search-bar input::placeholder{
+    /* color: rgb(200, 200, 200); */
+    color: gray;
+}
+
+/*------------------------------------------------- CHAT LIST------------------------------------------------------- */
+
+.chat-list{
+    height: 70%;
+    padding-bottom: 20px;
+    overflow-y: auto;
+    background-color: var(--primary);
+}
+.chat-list-single-user{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;   
+    cursor: pointer; 
+    padding-right: 10px;
+    background-color: var(--primary);
+}
+.chat-list-single-user:hover{
+    /* background-color: #e5e7eada; */
+    background-color: var(--tertiary);
+}
+.chat-list-single-user img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+.chat-list-single-user-info{
+    width: 100%;
+    padding: 15px;
+    border-bottom: 0.5px solid var(--tertiary);
+    color: var(--color);
+}
+.chat-list-single-user-info p{
+    color: lightgray;
+}
+
+/*------------------------------------------------- CHAT SECTION ----------------------------------------------------*/
+
+.chat-section{
+    flex: 2;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 0.5px solid var(--fourth);
+}
+.chat-nothing{
+    /* background-color: rgb(248, 248, 248); */
+    background-color: var(--tertiary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(183, 181, 181);
+    font-size: 20px;
+}
+.image-upload{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 101vh;
+    margin-bottom: 50px;
+    margin-right: 100px;
+}
+.image-upload img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.image-upload-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.image-upload-input form{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.image-upload-input form input{
+    padding: 10px;
+    width: 500px;
+    outline: none;
+    border: none;
+    background-color: var(--tertiary);
+    border-radius: 10px;
+    color: var(--colorq);
+}
+.image-upload-send{
+    background-color: var(--secondary);
+    color: white;
+    padding: 9px 7px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 11px;
+    cursor: pointer;
+}
+.image-upload-close{
+    position: absolute;
+    top: -30px;
+    left: 70px;
+    font-size: 2rem;
+    color: var(--color);
+    cursor: pointer;
+}
+
+
+/*--------------------------------------------- CHAT SECTION TOP BAR ------------------------------------------------*/
+
+.chat-section-top-bar{
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--tertiary);
+    color: var(--color);
+    border-bottom: 0.5px solid var(--fourth) ;
+    cursor: pointer;
+}
+.chat-section-top-bar img{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.chat-section-top-bar-arrow{
+    display: none;
+    margin-right: 4px;
+}
+
+.top-bar-dropdown{
+    border: none;
+    background-color: var(--secondary);
+    color: white;
+    height: 30px;
+    width: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+
+.message-color-container-top-bar{
+    padding: 10px;
+    background-color: var(--primary);
+    color: var(--color);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    position: absolute;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* left: 118px;
+    top: 0px; */
+    top: 45px;
+    right: 20px;
+}
+
+/* .chat-section-icons img{
+    width: 25px;
+    object-fit: contain;
+} */
+
+/*----------------------------------------------- MESSAGE CONTAINER -------------------------------------------------*/
+
+.message-container{
+    height: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    background-color: var(--background-color);
+}
+.message p{
+    max-width: 400px;
+    width: max-content;
+    background-color: var(--message) ;
+    color: var(--color) ;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 0px 20px 20px 20px;
+}
+.owner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.owner p{
+    flex-direction: row-reverse;
+    background-color: var(--secondary);
+    border-radius: 20px 20px 0px 20px;
+    color: white;
+}
+.message-time{
+    font-size: 10px;
+}
+.message-image-container{
+    width: max-content;
+    width: 50%;
+    margin-bottom: 10px;
+    padding: 3px;
+    background-color: var(--secondary);
+    border-radius: 10px;
+    color: var(--color);
+    margin: 20px 0px;
+}
+.message-image-container img{
+    width: 100%;
+    border-radius: 5px;
+}
+.message .message-image-container{
+    background-color: var(--message);
+}
+.owner .message-image-container{
+    flex-direction: row-reverse;
+    background-color: var(--secondary);
+    color: white;
+}
+
+.load-message-image{
+    width: 50%;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+    margin-right: 0;
+}
+.load-message-image img{
+    width: 100%;
+    border-radius: 10px;
+}
+.load-image-loading{
+    position: absolute;
+    top: 35%;
+    left: 42%
+}
+
+
+/*----------------------------------------------------- INPUT BAR ---------------------------------------------------*/
+
+.input-bar{
+    /* border-top: 0.5px solid var(--fourth); */
+    background-color: var(--tertiary);
+    height: 53px;
+    padding: 13px;
+    padding-left: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.input-bar input{
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background-color: var(--primary);
+    border-radius: 10px;
+    padding: 7px 15px;
+    color: var(--color);
+}
+.send{
+    display: flex;
+    align-items: center;
+    background-color: var(--tertiary);
+}
+.send label{
+    cursor: pointer;
+}
+.send button{
+    font-size: 16px;
+    color: var(--secondary);
+    border: none;
+    margin-left: 15px;
+    cursor: pointer;
+    background-color: var(--tertiary);
+}
+
+
+/* ----------------------------------- PROFILE ----------------------------------------------- */
+
+.profile{
+    flex: 0.8;
+    background-color: var(--primary);
+    height: 100vh;
+    color: black;
+    border-right: 0.5px solid var(--fourth);
+    background-color: var(--tertiary);
+}
+.profile-top-bar{
+    background-color: var(--secondary);
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    height: 60px;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+.profile-image{
+    background-color: var(--tertiary);
+    text-align: center;
+    padding: 25px;
+}
+.profile-image img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.profile-page-info{
+    padding: 10px 20px;
+    background-color: var(--primary);
+    margin-bottom: 10px;
+}
+.profile-page-info-title{
+    color: var(--secondary);
+    font-size: 14px;
+}
+.profile-page-info div{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    color: var(--color);
+}
+.profile-page-info div p{
+    max-width: 85%;
+}
+.pencil{
+    color: var(--color);
+    cursor: pointer;
+}
+
+
+
+
+
+
+@media screen and (max-width : 480px) {
+    .app{
+        height: 100vh;
+        overflow: hidden;
+    }
+    .chat-section{
+        display: none;
+    }
+    .sidebar{
+        flex: 1;
+        width: 100%;
+    }
+    .mobile-chat-section{
+        display: block;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    .mobile-chat-section .chat-section{
+        display: flex;
+        height: 100%;
+        flex: 1;
+    }
+    .mobile-chat-section .sidebar{
+        display: none;
+    }
+    .chat-section-top-bar-arrow{
+        display: block;
+    }
+    .message{
+        font-size: 14px;
+    }
+    .message p{
+        max-width: 250px;
+    }
+    .message img{
+        width: 80%;
+    }
+    .profile{
+        flex: 1;
+    }
+    .mobile-user-profile .chat-section{
+        display: none;
+    }
+    .top-bar-dropdown{
+        display: flex;
+    }
+    .chat-section-top-bar{
+        background-color: var(--secondary);
+        color: white ;
+    }
+    .mobile-not-show{
+        display: none;
+    }
+    .status{
+        width: 90%;
+    }
+    .status{
+        padding: 15px 10px;
+    }
+    .image-upload{
+        margin: 0;
+        align-items: flex-start;
+        margin-top: 100px;
+    }
+    .image-upload .image-upload-send{
+        right: -20px;
+    }
+    .message-image-container{
+        width: 80%;
+    }
+    .message-image-container img{
+        width: 100%;
+    }
+    .image-upload-close{
+        left: 20px;
+        top: -30px;
+    }
+    .image-upload img{
+        width: 200px;
+        height: 200px;
+        margin-bottom: 30px;
+        margin-right: 20px;
+    }
+    .image-upload-input form input{
+        width: 250px;
+    }
+    .load-message-image{
+        width: 80%;
+    }
+    .load-image-loading{
+        top: 22%;
+        left: 35%;
+    }
+
+}
