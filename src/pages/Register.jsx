@@ -7,7 +7,7 @@ import {
   getDownloadURL,
   uploadBytes
 } from "firebase/storage";
-import { doc, setDoc } from "firebase/firestore";
+import { Timestamp, doc, setDoc } from "firebase/firestore";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { v4 } from "uuid";
@@ -42,6 +42,8 @@ const Register = () => {
         name: name,
         email: email,
         photoURL: imageUrl,
+        lastMessage : " ",
+        time : Timestamp.now()
       });
       setMessageUser(null);
       navigate("/");

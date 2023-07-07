@@ -3,8 +3,9 @@ import { signOut } from "firebase/auth";
 import { auth, db } from "../Firebase";
 import { AuthContext } from "../context/AuthContext";
 import { doc, getDoc } from "firebase/firestore";
-import { MoreVert, Search } from "@mui/icons-material";
+import { Height, MoreVert, Search } from "@mui/icons-material";
 import { color } from "../ColorData";
+import logo from '../img/logo.png'
 
 const Navbar = () => {
   const { expand, setExpand, setDark, dark, setVisitProfile, id, setSearchClick } =
@@ -53,13 +54,9 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <div onClick={() => setVisitProfile(true)} className="navbar-profile">
-        <div style={{height:"45px",width:"45px",borderRadius:"50%"}}>
-        {data.photoURL && (
-          <img className="navbar-profile-img" src={data.photoURL} alt="" />
-        )}
-        </div>
-      </div>
+    <div onClick={()=> setExpand(false)} style={{flex:"1"}}>
+      <img style={{width:"40px",heigh:"40px",objectFit:"cover"}} src={logo} alt="" />
+    </div>
       <div className="navbar-icon-container">
         <button className="navbar-icon" onClick={()=> setSearchClick(true)}><Search /></button>
         <button
@@ -114,3 +111,16 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+// This is navbar logo
+
+{/* <div onClick={() => setVisitProfile(true)} className="navbar-profile">
+        <div style={{height:"45px",width:"45px",borderRadius:"50%"}}>
+        {data.photoURL && (
+          <img className="navbar-profile-img" src={data.photoURL} alt="" />
+        )}
+        </div>
+      </div> */}

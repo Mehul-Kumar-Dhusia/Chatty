@@ -14,7 +14,8 @@ const InputBar = () => {
     setUrl,
     setSendImage,
     setImageFile,
-    setCaption
+    setCaption,
+    messageUser
   } = useContext(AuthContext);
 
   const [text, setText] = useState("");
@@ -28,8 +29,16 @@ const InputBar = () => {
           text: write,
           senderId: currentUser.uid,
           date: Timestamp.now(),
-        }),
-      }));
+        })
+      }))
+    // await updateDoc(doc(db,"users",currentUser.uid),{
+    //     lastMessage : write,
+    //     time : Timestamp.now()
+    // })
+    // await updateDoc(doc(db,"users",messageUser.id),{
+    //     lastMessage : write,
+    //     time : Timestamp.now()
+    // })
   };
 
   const keyHandler = async (e) => {
@@ -44,6 +53,15 @@ const InputBar = () => {
             date: Timestamp.now(),
           }),
         }));
+      
+      // await updateDoc(doc(db,"users",currentUser.uid),{
+      //     lastMessage : write,
+      //     time : Timestamp.now()
+      // })
+      // await updateDoc(doc(db,"users",messageUser.id),{
+      //     lastMessage : write,
+      //     time : Timestamp.now()
+      // })
     }
   };
 

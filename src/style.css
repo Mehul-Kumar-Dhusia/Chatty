@@ -21,6 +21,7 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0;
     margin: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .router-link{
@@ -28,6 +29,9 @@
     color: var(--color);
 }
 
+*:focus{
+    outline: none;
+}
 /*--------------------------------------------- REGISTER AND LOGIN --------------------------------------------------*/
 
 .register{
@@ -123,7 +127,9 @@
     background-color: var(--primary);
     height: 100vh;
     color: black;
-    
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
 }
 
 /*--------------------------------------------------- NAVBAR --------------------------------------------------------*/
@@ -172,6 +178,9 @@
 }
 .navbar-icon:hover{
     background-color: rgb(220,220,220);
+}
+.navbar-icon:focus{
+    outline: none;
 }
 
 .navbar-dropdown{
@@ -223,26 +232,50 @@
 
 .status{
     background-color: var(--primary);
-    padding: 20px 10px;
-    width: 414px;
+    padding: 10px 5px;
+    width: 427px;
     display: grid;
     grid-auto-flow: column;
     overflow: scroll;
     gap: 10px;
+    height: 150px;
     /* border-bottom: 0.5px solid var(--fourth); */
     /* border-right: 0.5px solid var(--primary); */
 }
-.status-content{
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-.status div{
-    border: 3px solid var(--secondary);
+.user-status{
+    height: 55px;
+    width: 55px;
     border-radius: 50%;
     padding: 2px;
     cursor: pointer;
+    cursor: pointer;
+}
+.add-border{
+    border: 3px solid var(--secondary);
+}
+.status img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.user-status-add{
+    width: max-content;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    bottom: 7px;
+    z-index: 2;
+    background-color: rgb(0,124,247);
+    color: white;
+    cursor: pointer;
+}
+.status-name{
+    font-size: 14px;
 }
 .search-bar{
     display: flex;
@@ -270,7 +303,7 @@
 /*------------------------------------------------- CHAT LIST------------------------------------------------------- */
 
 .chat-list{
-    height: 70%;
+    /* height: 100%; */
     padding-bottom: 20px;
     overflow-y: auto;
     background-color: var(--primary);
@@ -610,10 +643,6 @@
 }
 
 
-
-
-
-
 @media screen and (max-width : 480px) {
     .app{
         height: 100vh;
@@ -668,10 +697,10 @@
         display: none;
     }
     .status{
-        width: 90%;
+        width: 97%;
     }
     .status{
-        padding: 15px 10px;
+        padding: 15px 5px;
     }
     .image-upload{
         margin: 0;
@@ -706,6 +735,9 @@
     .load-image-loading{
         top: 22%;
         left: 35%;
+    }
+    .navbar-icon:hover{
+        background-color: var(--tertiary);
     }
 
 }
