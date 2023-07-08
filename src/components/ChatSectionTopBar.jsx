@@ -25,7 +25,7 @@ const ChatSectionTopBar = () => {
           onClick={() => setUserProfile(true)}
           style={{ display: "flex", alignItems: "center" }}
         >
-          <img src={messageUser.photoURL} alt="" />
+          {messageUser.photoURL && <img src={messageUser.photoURL} alt="" />}
           <div>{messageUser.name}</div>
         </div>
       </div>

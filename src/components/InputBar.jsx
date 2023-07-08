@@ -31,14 +31,14 @@ const InputBar = () => {
           date: Timestamp.now(),
         })
       }))
-    // await updateDoc(doc(db,"users",currentUser.uid),{
-    //     lastMessage : write,
-    //     time : Timestamp.now()
-    // })
-    // await updateDoc(doc(db,"users",messageUser.id),{
-    //     lastMessage : write,
-    //     time : Timestamp.now()
-    // })
+    await updateDoc(doc(db,"users",currentUser.uid),{
+        lastMessage : write,
+        time : Timestamp.now()
+    })
+    await updateDoc(doc(db,"users",messageUser.id),{
+        lastMessage : write,
+        time : Timestamp.now()
+    })
   };
 
   const keyHandler = async (e) => {
@@ -54,14 +54,14 @@ const InputBar = () => {
           }),
         }));
       
-      // await updateDoc(doc(db,"users",currentUser.uid),{
-      //     lastMessage : write,
-      //     time : Timestamp.now()
-      // })
-      // await updateDoc(doc(db,"users",messageUser.id),{
-      //     lastMessage : write,
-      //     time : Timestamp.now()
-      // })
+      await updateDoc(doc(db,"users",currentUser.uid),{
+          lastMessage : write,
+          time : Timestamp.now()
+      })
+      await updateDoc(doc(db,"users",messageUser.id),{
+          lastMessage : write,
+          time : Timestamp.now()
+      })
     }
   };
 

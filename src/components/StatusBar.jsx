@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { AuthContext } from '../context/AuthContext'
 import Status from './Status'
-import { Add, BorderAll } from '@mui/icons-material'
+import { Add } from '@mui/icons-material'
 
 const StatusBar = () => {
   const {userList,currentUser} = useContext(AuthContext)

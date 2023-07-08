@@ -9,22 +9,26 @@ const ChatList = () => {
   
   useEffect(()=>{
     async function fetchData(){
-      // const q = query(collection(db,'users'),where("id" , "!=" , currentUser.uid), orderBy("id"),orderBy("time"))
-      // const unsub = onSnapshot(q , (doc) => {
-      //   const array = [];
-      //   doc.forEach((data) => {array.push(data.data())});
-      //   setUserList(array)
-      // })
-      // return () => {
-      //   unsub()
-      // }
-      const snap = await getDocs(collection(db,'users'))
-      const array = []
-      snap.forEach(data => array.push(data.data()))
-      const someData = array.filter(data => {
-        return data.id !== id
+      const q = query(collection(db,'users'),orderBy("time","desc"))
+      const unsub = onSnapshot(q , (doc) => {
+        const array = [];
+        doc.forEach((data) => {array.push(data.data())});
+        const someData = array.filter(data => {
+            return data.id !== id
+          })
+        setUserList(someData)
+        // setUserList(array)
       })
-      setUserList(someData)
+      return () => {
+        unsub()
+      }
+      // const snap = await getDocs(q)
+      // const array = []
+      // snap.forEach(data => array.push(data.data()))
+      // const someData = array.filter(data => {
+      //   return data.id !== id
+      // })
+      // setUserList(someData)
     }
    fetchData()
   },[id,setUserList,currentUser.uid])

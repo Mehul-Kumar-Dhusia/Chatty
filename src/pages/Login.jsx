@@ -31,7 +31,7 @@ const Login = () => {
   }
   return (
     <div className="register">
-      {loading ? <Loading /> : <div className="wrapper">
+      {loading && !err ? <Loading /> : <div className="wrapper">
         <h1>Chatty</h1>
         <span>Login</span>
         <form onSubmit={submitHandler}>

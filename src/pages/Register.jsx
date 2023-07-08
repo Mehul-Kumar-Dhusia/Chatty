@@ -102,7 +102,7 @@ const Register = () => {
 
   return (
     <div className="register">
-      {load ? <Loading /> :  <div className="wrapper">
+      {load && !err ? <Loading /> :  <div className="wrapper">
         <h1>Chatty</h1>
         <span>Register</span>
         <form onSubmit={submitHandler}>

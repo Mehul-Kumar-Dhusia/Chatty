@@ -234,11 +234,14 @@
     background-color: var(--primary);
     padding: 10px 5px;
     width: 427px;
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
+    align-items: center;
+    /* display: grid;
+    grid-auto-flow: column; */
     overflow: scroll;
     gap: 10px;
     height: 150px;
+    max-height: 150px;
     /* border-bottom: 0.5px solid var(--fourth); */
     /* border-right: 0.5px solid var(--primary); */
 }
@@ -248,7 +251,10 @@
     border-radius: 50%;
     padding: 2px;
     cursor: pointer;
-    cursor: pointer;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+
 }
 .add-border{
     border: 3px solid var(--secondary);
@@ -268,7 +274,7 @@
     border-radius: 50%;
     position: absolute;
     right: 0;
-    bottom: 7px;
+    bottom: 0px;
     z-index: 2;
     background-color: rgb(0,124,247);
     color: white;
@@ -320,21 +326,28 @@
     /* background-color: #e5e7eada; */
     background-color: var(--tertiary);
 }
-.chat-list-single-user img{
+.chat-list-single-user img,.no-photo{
     width: 45px;
     height: 45px;
     border-radius: 50%;
     margin-right: 15px;
     object-fit: cover;
+    
 }
 .chat-list-single-user-info{
     width: 100%;
     padding: 15px;
     border-bottom: 0.5px solid var(--tertiary);
     color: var(--color);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 .chat-list-single-user-info p{
     color: lightgray;
+}
+.chat-list-time{
+    font-size: 12px;
 }
 
 /*------------------------------------------------- CHAT SECTION ----------------------------------------------------*/
