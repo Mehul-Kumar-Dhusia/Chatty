@@ -26,7 +26,7 @@ const Profile = () => {
       <div className='profile-page-info'>
         <p className='profile-page-info-title'>Description</p>
         <div>
-            <p>Availabe</p>
+            <p>Availabel</p>
             <Create className='pencil' />
         </div>
       </div>
